@@ -1,492 +1,1677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jamaica Heritage - MVSE Empire Heritage Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-    :root {
-      --bg-dark: #141512;
-      --bg-card: #1d1f1a;
-      --cream: #f7f4eb;
-      --gold: #d4b468;
-      --gold-light: #e5c985;
-      --green-btn: #255926;
-      --green-border: #3a6b35;
-      --text-muted: #c2bfb6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101810">
+<meta name="description" content="Explore Jamaica's history, National Heroes, culture, heritage sites, traditions and legacy through MVSE Empire Jamaica Heritage Hub.">
+<meta name="keywords" content="Jamaica history, Jamaica heritage, National Heroes, Taíno, Maroons, Jamaican culture, MVSE Empire">
+<title>Jamaica Heritage Hub | MVSE Empire</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      background-color: #0d0e0c;
-      color: var(--cream);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    /* App Container (Mobile-First, scales nicely on desktop) */
-    .app-container {
-      width: 100%;
-      max-width: 460px;
-      background-color: var(--bg-dark);
-      background-image: radial-gradient(circle at top right, rgba(212, 180, 104, 0.08), transparent 50%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
-      padding-bottom: 80px;
-    }
+<style>
+:root {
+  --black: #0c100c;
+  --dark: #141a14;
+  --card: #1b241b;
+  --green: #174c2b;
+  --green-light: #276c3d;
+  --gold: #d4b468;
+  --gold-light: #f0d68e;
+  --cream: #f7f3e9;
+  --muted: #b9bdb3;
+  --border: rgba(212,180,104,.35);
+}
 
-    /* Top Header */
-    header {
-      background-color: var(--cream);
-      color: #1c1c1a;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 3px solid var(--green-btn);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    .icon-btn {
-      background: none;
-      border: none;
-      font-size: 1.25rem;
-      color: #1c1c1a;
-      cursor: pointer;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-align: center;
-    }
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.6;
+}
 
-    .brand-text h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
-      letter-spacing: 1px;
-      line-height: 1;
-      color: #1a1a18;
-    }
+button, input {
+  font: inherit;
+}
 
-    .brand-text span {
-      font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
-      letter-spacing: 3px;
-      color: #8c6d23;
-      font-weight: 700;
-    }
+button {
+  cursor: pointer;
+}
 
-    .crest-badge {
-      width: 32px;
-      height: 32px;
-      background: linear-gradient(135deg, #d4b468, #9c7a2c);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    /* Main Content */
-    main {
-      padding: 18px 16px;
-      flex: 1;
-    }
+img {
+  max-width: 100%;
+}
 
-    /* Hero Banner */
-    .hero-card {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1.5px solid var(--gold);
-      height: 175px;
-      background: linear-gradient(to right, rgba(20, 18, 13, 0.88) 35%, rgba(20, 18, 13, 0.35)),
-                  url('https://images.unsplash.com/photo-1589519160732-57fc498494f8?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 22px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
-    }
+/* TOP HEADER */
 
-    .hero-card h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.45rem;
-      color: #ffffff;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-      margin-bottom: 14px;
-    }
+header {
+  background: var(--cream);
+  color: #171b15;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--green);
+}
 
-    .btn-primary {
-      align-self: flex-start;
-      background-color: var(--green-btn);
-      color: var(--gold-light);
-      border: 1px solid var(--gold);
-      padding: 9px 18px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
 
-    .btn-primary:hover {
-      background-color: #2f6e30;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    /* Carousel Dots */
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 7px;
-      margin: 12px 0 18px;
-    }
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gold-light), #9a762d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.25rem;
+  border: 2px solid #8c702f;
+}
 
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background-color: #55544d;
-    }
+.brand h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
 
-    .dot.active {
-      background-color: var(--gold);
-    }
+.brand small {
+  letter-spacing: 3px;
+  color: #8d6e27;
+  font-weight: 700;
+}
 
-    /* Era Cards Grid */
-    .era-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
 
-    .era-card {
-      background-color: var(--bg-card);
-      border: 1.5px solid var(--green-border);
-      outline: 1px solid rgba(212, 180, 104, 0.45);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
+.header-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: #182018;
+  padding: 8px;
+}
 
-    .era-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--gold);
-    }
+/* DESKTOP NAV */
 
-    .era-img {
-      width: 100%;
-      height: 125px;
-      object-fit: cover;
-      border-bottom: 1px solid rgba(212, 180, 104, 0.3);
-    }
+.desktop-nav {
+  background: var(--green);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 8px;
+}
 
-    .era-info {
-      padding: 12px;
-      position: relative;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.desktop-nav a {
+  padding: 9px 14px;
+  border-radius: 6px;
+  color: white;
+  font-size: .82rem;
+  font-weight: 600;
+}
 
-    .era-info h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.98rem;
-      color: var(--gold-light);
-      line-height: 1.2;
-      margin-bottom: 6px;
-    }
+.desktop-nav a:hover {
+  background: var(--gold);
+  color: #111;
+}
 
-    .era-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+/* MAIN */
 
-    .era-meta i {
-      color: var(--gold);
-      font-size: 0.75rem;
-    }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 25px 18px 110px;
+  margin: auto;
+}
 
-    /* Contribution / PayPal Section */
-    .support-section {
-      margin-top: 22px;
-      background-color: var(--bg-card);
-      border: 1px solid var(--gold);
-      border-radius: 14px;
-      padding: 18px 16px;
-      text-align: center;
-    }
+.section {
+  margin-top: 40px;
+}
 
-    .support-section h4 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold-light);
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
+.section-heading {
+  margin-bottom: 20px;
+}
 
-    .support-section p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
+.section-heading h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  font-size: 1.55rem;
+}
 
-    /* Bottom Navigation */
-    nav.bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      max-width: 460px;
-      background-color: var(--cream);
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0 12px;
-      border-top: 2px solid var(--gold);
-      z-index: 100;
-    }
+.section-heading p {
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: .92rem;
+}
 
-    .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #63615a;
-      font-size: 0.75rem;
-      font-weight: 600;
-      gap: 4px;
-    }
+/* HERO */
 
-    .nav-item i {
-      font-size: 1.15rem;
-    }
+.hero {
+  min-height: 350px;
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(7,14,9,.95), rgba(7,14,9,.45)),
+    url('https://images.unsplash.com/photo-1492252712236-7d0d3a5c7f16?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
+  padding: 30px;
+}
 
-    .nav-item.active {
-      color: var(--green-btn);
-    }
+.hero-content {
+  max-width: 650px;
+}
 
-    /* Simple Modal for Era Details */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.82);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+.hero-label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: .75rem;
+  font-weight: 700;
+}
 
-    .modal-content {
-      background: var(--bg-card);
-      border: 1.5px solid var(--gold);
-      border-radius: 16px;
-      max-width: 400px;
-      width: 100%;
-      padding: 20px;
-      color: var(--cream);
-    }
+.hero h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  margin: 15px 0;
+}
 
-    .modal-content h3 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold-light);
-      margin-bottom: 8px;
-    }
+.hero p {
+  color: #e0dfd4;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
 
-    .modal-content p {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-  </style>
+.btn {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--green);
+  color: var(--gold-light);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+}
+
+/* SEARCH */
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.search-box i {
+  color: var(--gold);
+  align-self: center;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  padding: 5px;
+}
+
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+.search-results {
+  display: none;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.search-results button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--cream);
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-results button:hover {
+  background: var(--green);
+}
+
+/* FEATURE GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.card-image {
+  height: 175px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  margin-bottom: 7px;
+}
+
+.card-content p {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.card-action {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--gold);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.card-action:hover {
+  color: white;
+}
+
+/* TIMELINE */
+
+.timeline {
+  border-left: 3px solid var(--gold);
+  margin-left: 10px;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -29px;
+  top: 22px;
+  width: 13px;
+  height: 13px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.timeline-item h3 {
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+}
+
+.timeline-date {
+  font-size: .8rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.timeline-item p {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* HEROES */
+
+.hero-card-mini {
+  text-align: center;
+}
+
+.hero-card-mini .card-image {
+  height: 210px;
+}
+
+.hero-card-mini h3 {
+  font-size: .92rem;
+}
+
+/* PARISHES */
+
+.parish-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.parish {
+  padding: 15px 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--gold-light);
+  font-weight: 600;
+  transition: .2s;
+}
+
+.parish:hover {
+  background: var(--green);
+  border-color: var(--gold);
+}
+
+/* CULTURE */
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.culture-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 15px;
+  text-align: center;
+}
+
+.culture-card i {
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.culture-card h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+}
+
+/* BOOKMARKS */
+
+.bookmark-btn {
+  background: transparent;
+  color: var(--gold);
+  border: none;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.bookmark-btn.saved {
+  color: #6ed17a;
+}
+
+/* SUPPORT */
+
+.support {
+  background: linear-gradient(145deg, #1b241b, #101610);
+  border: 1px solid var(--gold);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.support h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+}
+
+.support p {
+  color: var(--muted);
+  margin: 12px 0 20px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #080b08;
+  border-top: 1px solid var(--gold);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.3rem;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: .85rem;
+  margin-top: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.footer-links a {
+  color: var(--gold-light);
+  font-size: .85rem;
+}
+
+/* MOBILE NAV */
+
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--cream);
+  color: #222;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 4px;
+  z-index: 1000;
+  border-top: 3px solid var(--gold);
+}
+
+.mobile-nav a {
+  text-align: center;
+  font-size: .72rem;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.mobile-nav i {
+  font-size: 1.15rem;
+}
+
+.mobile-nav a.active {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,.85);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.modal-content h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  color: var(--muted);
+  white-space: pre-line;
+  margin-bottom: 15px;
+}
+
+.modal-close {
+  float: right;
+  background: transparent;
+  color: var(--gold);
+  border: none;
+  font-size: 1.4rem;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .parish-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .culture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+}
+
+@media(max-width:480px) {
+  .hero {
+    min-height: 300px;
+    padding: 22px;
+  }
+
+  .grid {
+    gap: 12px;
+  }
+
+  .card-image {
+    height: 140px;
+  }
+
+  .container {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .brand h1 {
+    font-size: 1rem;
+  }
+
+  .parish-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-card-mini .card-image {
+    height: 150px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="app-container">
-    <!-- Top Header -->
-    <header>
-      <button class="icon-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
-      <div class="brand">
-        <div class="brand-text">
-          <h1>JAMAICA</h1>
-          <span>HERITAGE</span>
-        </div>
-        <div class="crest-badge" title="Coat of Arms">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-      </div>
-      <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </header>
+<header>
+  <div class="header-inner">
 
-    <!-- Main Content -->
-    <main>
-      <!-- Hero Card -->
-      <section class="hero-card">
-        <h2>Discover Our Journey</h2>
-        <button class="btn-primary" onclick="openModal('Jamaica Historical Timeline', 'Explore the rich history of Jamaica from the indigenous Taíno people through colonial eras to modern independence.')">
-          Explore Timeline
-        </button>
-      </section>
-
-      <!-- Pagination Dots -->
-      <div class="carousel-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <a href="#home" class="brand">
+      <div class="logo">
+        <i class="fa-solid fa-shield-halved"></i>
       </div>
 
-      <!-- 2x2 Historical Era Grid -->
-      <section class="era-grid">
-        <!-- Card 1: Taino History -->
-        <article class="era-card" onclick="openModal('Taíno History — The First People', 'The indigenous Taíno inhabitants named the island Xaymaca, meaning Land of Wood and Water. They were skilled farmers, potters, and seafarers who lived peacefully across the island before 1494.')">
-          <img class="era-img" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=500&q=80" alt="Taíno Pottery and Artifacts">
-          <div class="era-info">
-            <h3>TAINO<br>HISTORY</h3>
-            <div class="era-meta">
-              <span>The First People</span>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </div>
-        </article>
+      <div>
+        <h1>JAMAICA HERITAGE</h1>
+        <small>MVSE EMPIRE</small>
+      </div>
+    </a>
 
-        <!-- Card 2: Spanish Era -->
-        <article class="era-card" onclick="openModal('Spanish Era (1494 - 1655)', 'Following Christopher Columbus’s arrival in 1494, Spain established settlements including Sevilla la Nueva and Villa de la Vega (Spanish Town), introducing new crops and livestock while drastically impacting the native population.')">
-          <img class="era-img" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80" alt="Spanish Era Ship and Architecture">
-          <div class="era-info">
-            <h3>SPANISH<br>ERA</h3>
-            <div class="era-meta">
-              <span>1494 - 1655</span>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </div>
-        </article>
+    <div class="header-actions">
+      <button class="header-btn" onclick="toggleSearch()" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
 
-        <!-- Card 3: British Rule -->
-        <article class="era-card" onclick="openModal('British Rule (1655 - 1962)', 'Captured by England in 1655, Jamaica became a major sugar-producing colony. This era saw the rise of Maroon resistance, the abolition of slavery in 1838, and the Morant Bay Rebellion led by Paul Bogle.')">
-          <img class="era-img" src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=500&q=80" alt="Colonial Architecture">
-          <div class="era-info">
-            <h3>BRITISH<br>RULE</h3>
-            <div class="era-meta">
-              <span>1655 - 1962</span>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </div>
-        </article>
+      <button class="header-btn" onclick="showModal('About MVSE Empire','MVSE Empire Heritage Hub is a digital platform dedicated to preserving, exploring and celebrating Jamaica’s history, culture and legacy.')" aria-label="About">
+        <i class="fa-solid fa-circle-info"></i>
+      </button>
+    </div>
 
-        <!-- Card 4: Independence -->
-        <article class="era-card" onclick="openModal('Independence (1962 - Present)', 'On August 6, 1962, Jamaica gained full independence from the United Kingdom, raising the black, green, and gold flag and emerging as a global cultural powerhouse in music, sports, and heritage.')">
-          <img class="era-img" src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=500&q=80" alt="Jamaican Independence Celebration">
-          <div class="era-info">
-            <h3>INDEPENDENCE</h3>
-            <div class="era-meta">
-              <span>1962 - Present</span>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- Monthly Site Maintenance Subscription Box -->
-      <section class="support-section">
-        <h4>Support MVSE Empire Heritage Hub</h4>
-        <p>Contribute $2.99 USD monthly to help maintain and expand our Jamaican heritage archive.</p>
-        
-        <!-- Integrated PayPal Subscribe Button -->
-        <div id="paypal-button-container-P-22F09358XD239133LNMCYW4Q"></div>
-      </section>
-    </main>
-
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-      <a href="#home" class="nav-item active">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
-      </a>
-      <a href="#timeline" class="nav-item" onclick="openModal('Timeline', 'Full chronological timeline view coming soon.')">
-        <i class="fa-solid fa-list-ul"></i>
-        <span>Timeline</span>
-      </a>
-      <a href="#map" class="nav-item" onclick="openModal('Heritage Map', 'Interactive map of historic sites across Jamaica coming soon.')">
-        <i class="fa-solid fa-map"></i>
-        <span>Map</span>
-      </a>
-      <a href="#bookmark" class="nav-item" onclick="openModal('Bookmarks', 'Your saved historical articles and landmarks.')">
-        <i class="fa-solid fa-bookmark"></i>
-        <span>Bookmark</span>
-      </a>
-    </nav>
   </div>
 
-  <!-- Info Modal -->
-  <div id="infoModal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <h3 id="modalTitle">Title</h3>
-      <p id="modalBody">Description</p>
-      <button class="btn-primary" onclick="document.getElementById('infoModal').style.display='none'">Close</button>
+  <nav class="desktop-nav">
+    <a href="#home">Home</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#heroes">National Heroes</a>
+    <a href="#culture">Culture</a>
+    <a href="#parishes">Parishes</a>
+    <a href="#library">Library</a>
+    <a href="#support">Support</a>
+  </nav>
+</header>
+
+<main class="container" id="home">
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <span class="hero-label">OUR HISTORY • OUR CULTURE • OUR LEGACY</span>
+
+    <h2>Discover the Journey of Jamaica</h2>
+
+    <p>
+      Explore the people, struggles, achievements, traditions and historical events
+      that shaped Jamaica into the nation we know today.
+    </p>
+
+    <a href="#timeline" class="btn">
+      Explore Our History
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- SEARCH -->
+
+<div class="search-box" id="searchArea">
+  <i class="fa-solid fa-magnifying-glass"></i>
+
+  <input
+    id="searchInput"
+    type="search"
+    placeholder="Search Jamaican history, heroes, culture..."
+    oninput="searchSite()"
+  >
+</div>
+
+<div class="search-results" id="searchResults"></div>
+
+<!-- FEATURED -->
+
+<section class="section">
+
+  <div class="section-heading">
+    <h2>Explore Jamaica Heritage</h2>
+    <p>Discover the important pillars of our national heritage.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <img class="card-image"
+      src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=700&q=80"
+      alt="Jamaican landscape">
+
+      <div class="card-content">
+        <h3>Historical Timeline</h3>
+        <p>Journey through the different periods of Jamaican history.</p>
+        <a href="#timeline" class="card-action">Explore Timeline →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="card-image"
+      src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=700&q=80"
+      alt="Historical architecture">
+
+      <div class="card-content">
+        <h3>National Heroes</h3>
+        <p>Learn about the individuals who shaped Jamaica's destiny.</p>
+        <a href="#heroes" class="card-action">Meet Our Heroes →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="card-image"
+      src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80"
+      alt="Music and culture">
+
+      <div class="card-content">
+        <h3>Culture & Traditions</h3>
+        <p>Explore Jamaica's music, food, language and cultural identity.</p>
+        <a href="#culture" class="card-action">Explore Culture →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="card-image"
+      src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80"
+      alt="Jamaican nature">
+
+      <div class="card-content">
+        <h3>Heritage & Legacy</h3>
+        <p>Discover the stories and legacy that continue to shape our nation.</p>
+        <a href="#library" class="card-action">Discover More →</a>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="section" id="timeline">
+
+  <div class="section-heading">
+    <h2>Jamaica Historical Timeline</h2>
+    <p>Explore the major periods that shaped Jamaica.</p>
+  </div>
+
+  <div class="timeline">
+
+    <article class="timeline-item">
+      <span class="timeline-date">Before 1494</span>
+      <h3>Taíno & Indigenous Jamaica</h3>
+      <p>
+        The island was inhabited by Indigenous peoples, including Taíno communities.
+        The name Xaymaca is traditionally associated with the meaning
+        “Land of Wood and Water.”
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('Taíno & Indigenous Jamaica')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">1494–1655</span>
+      <h3>Spanish Period</h3>
+      <p>
+        Spanish colonization began following Columbus's arrival in 1494.
+        Settlements, colonial systems and European livestock and crops
+        changed the island.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('Spanish Period')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">1655–1962</span>
+      <h3>British Colonial Rule</h3>
+      <p>
+        England captured Jamaica in 1655. The colony became heavily
+        connected to sugar production, plantation slavery, colonial
+        government and resistance.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('British Colonial Rule')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">17th–18th Centuries</span>
+      <h3>Maroon Resistance</h3>
+      <p>
+        Maroon communities resisted colonial domination and developed
+        autonomous settlements. Their resistance became an important
+        part of Jamaica's history.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('Maroon Resistance')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">1834–1838</span>
+      <h3>Emancipation</h3>
+      <p>
+        The abolition of slavery was followed by the apprenticeship system.
+        Full freedom for enslaved people in the British Caribbean came in 1838.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('Emancipation')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">1865</span>
+      <h3>Morant Bay Rebellion</h3>
+      <p>
+        The rebellion led by Paul Bogle exposed major injustices and
+        inequalities in colonial Jamaica and became a turning point
+        in Jamaican political history.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('Morant Bay Rebellion')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">1930s–1960s</span>
+      <h3>National Movement</h3>
+      <p>
+        Workers' movements, political organizations, national leadership
+        and social change helped transform Jamaica's political future.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('National Movement')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+    <article class="timeline-item">
+      <span class="timeline-date">August 6, 1962</span>
+      <h3>Jamaican Independence</h3>
+      <p>
+        Jamaica became an independent nation, establishing its own
+        national identity, flag and independent political institutions.
+      </p>
+      <button class="bookmark-btn" onclick="bookmark('Jamaican Independence')">
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- NATIONAL HEROES -->
+
+<section class="section" id="heroes">
+
+  <div class="section-heading">
+    <h2>Jamaica's National Heroes</h2>
+    <p>Remembering those who contributed to our freedom, identity and development.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Nanny_of_the_Maroons.jpg/400px-Nanny_of_the_Maroons.jpg"
+      alt="Nanny of the Maroons">
+      <div class="card-content">
+        <h3>Nanny of the Maroons</h3>
+        <p>Maroon leader and freedom fighter.</p>
+        <button class="card-action" onclick="showModal('Nanny of the Maroons','Nanny is celebrated for her leadership, resistance and role in protecting Maroon freedom. She is recognized as one of Jamaica’s National Heroes.')">Read Biography →</button>
+      </div>
+    </article>
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Samuel_Sharpe.jpg/400px-Samuel_Sharpe.jpg"
+      alt="Samuel Sharpe">
+      <div class="card-content">
+        <h3>Samuel Sharpe</h3>
+        <p>Leader associated with the 1831–1832 Baptist War.</p>
+        <button class="card-action" onclick="showModal('Samuel Sharpe','Samuel Sharpe was a Baptist deacon and leader of the 1831 Christmas Rebellion, an important uprising against slavery. His resistance helped influence the movement toward abolition.')">Read Biography →</button>
+      </div>
+    </article>
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Marcus_Garvey_1924.jpg/400px-Marcus_Garvey_1924.jpg"
+      alt="Marcus Garvey">
+      <div class="card-content">
+        <h3>Marcus Garvey</h3>
+        <p>Black empowerment and Pan-African leader.</p>
+        <button class="card-action" onclick="showModal('Marcus Garvey','Marcus Mosiah Garvey promoted Black pride, economic independence, unity and Pan-African consciousness. His ideas influenced movements around the world.')">Read Biography →</button>
+      </div>
+    </article>
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Paul_Bogle.jpg/400px-Paul_Bogle.jpg"
+      alt="Paul Bogle">
+      <div class="card-content">
+        <h3>Paul Bogle</h3>
+        <p>Leader of the Morant Bay protest movement.</p>
+        <button class="card-action" onclick="showModal('Paul Bogle','Paul Bogle was a Baptist preacher and community leader who led the Morant Bay protest and rebellion in 1865. He became a symbol of justice and resistance.')">Read Biography →</button>
+      </div>
+    </article>
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/George_William_Gordon.jpg/400px-George_William_Gordon.jpg"
+      alt="George William Gordon">
+      <div class="card-content">
+        <h3>George William Gordon</h3>
+        <p>Political leader and advocate for justice.</p>
+        <button class="card-action" onclick="showModal('George William Gordon','George William Gordon was a Jamaican politician who advocated for the rights of poor and oppressed people. He was executed following the Morant Bay Rebellion.')">Read Biography →</button>
+      </div>
+    </article>
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Alexander_Bustamante.jpg/400px-Alexander_Bustamante.jpg"
+      alt="Alexander Bustamante">
+      <div class="card-content">
+        <h3>Alexander Bustamante</h3>
+        <p>Labour leader and Jamaica's first Prime Minister.</p>
+        <button class="card-action" onclick="showModal('Alexander Bustamante','Alexander Bustamante was a trade union and political leader. He became Jamaica’s first Prime Minister after independence in 1962.')">Read Biography →</button>
+      </div>
+    </article>
+
+    <article class="card hero-card-mini">
+      <img class="card-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Norman_Manley.jpg/400px-Norman_Manley.jpg"
+      alt="Norman Manley">
+      <div class="card-content">
+        <h3>Norman Manley</h3>
+        <p>National leader and advocate for self-government.</p>
+        <button class="card-action" onclick="showModal('Norman Manley','Norman Washington Manley was a Jamaican statesman, advocate for self-government and founder of the People’s National Party. He helped shape Jamaica’s political development.')">Read Biography →</button>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- CULTURE -->
+
+<section class="section" id="culture">
+
+  <div class="section-heading">
+    <h2>Jamaican Culture</h2>
+    <p>Our culture is a living legacy of creativity, resilience and identity.</p>
+  </div>
+
+  <div class="culture-grid">
+
+    <article class="culture-card">
+      <i class="fa-solid fa-music"></i>
+      <h3>Music</h3>
+      <p>Reggae, ska, mento, dancehall and roots music.</p>
+    </article>
+
+    <article class="culture-card">
+      <i class="fa-solid fa-utensils"></i>
+      <h3>Food</h3>
+      <p>Jerk, ackee and saltfish, patties, festivals and traditional cuisine.</p>
+    </article>
+
+    <article class="culture-card">
+      <i class="fa-solid fa-language"></i>
+      <h3>Language</h3>
+      <p>Jamaican English and Jamaican Patois.</p>
+    </article>
+
+    <article class="culture-card">
+      <i class="fa-solid fa-palette"></i>
+      <h3>Arts</h3>
+      <p>Visual art, craft, dance, storytelling and creative expression.</p>
+    </article>
+
+    <article class="culture-card">
+      <i class="fa-solid fa-people-group"></i>
+      <h3>Traditions</h3>
+      <p>Community, family, celebrations, heritage and customs.</p>
+    </article>
+
+    <article class="culture-card">
+      <i class="fa-solid fa-mountain-sun"></i>
+      <h3>Natural Heritage</h3>
+      <p>Mountains, rivers, forests, beaches and biodiversity.</p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- PARISHES -->
+
+<section class="section" id="parishes">
+
+  <div class="section-heading">
+    <h2>Explore Jamaica by Parish</h2>
+    <p>Discover the communities, history and heritage of Jamaica's parishes.</p>
+  </div>
+
+  <div class="parish-grid">
+
+    <button class="parish" onclick="showModal('Kingston','Kingston is Jamaica’s capital and a major centre of government, commerce, culture, music and national development.')">Kingston</button>
+
+    <button class="parish" onclick="showModal('St. Andrew','St. Andrew surrounds and shares the capital region with Kingston. It is known for communities, business, culture and the Blue Mountains.')">St. Andrew</button>
+
+    <button class="parish" onclick="showModal('St. Thomas','St. Thomas is located in eastern Jamaica and is associated with historic communities, coastal landscapes and the Morant Bay Rebellion.')">St. Thomas</button>
+
+    <button class="parish" onclick="showModal('Portland','Portland is known for its lush landscape, rivers, mountains, beaches and natural beauty.')">Portland</button>
+
+    <button class="parish" onclick="showModal('St. Mary','St. Mary is known for its coastal areas, agricultural communities, history and natural attractions.')">St. Mary</button>
+
+    <button class="parish" onclick="showModal('St. Ann','St. Ann is often called the Garden Parish and is known for historic sites, tourism and natural attractions.')">St. Ann</button>
+
+    <button class="parish" onclick="showModal('Trelawny','Trelawny has a rich history connected to sugar, colonial communities and Jamaican cultural development.')">Trelawny</button>
+
+    <button class="parish" onclick="showModal('St. James','St. James includes Montego Bay, a major tourism, commerce and cultural centre in Jamaica.')">St. James</button>
+
+    <button class="parish" onclick="showModal('Hanover','Hanover is located in western Jamaica and has historic communities, agricultural traditions and coastal heritage.')">Hanover</button>
+
+    <button class="parish" onclick="showModal('Westmoreland','Westmoreland is known for agriculture, coastal communities, historic estates and the town of Savanna-la-Mar.')">Westmoreland</button>
+
+    <button class="parish" onclick="showModal('St. Elizabeth','St. Elizabeth is known for agriculture, fishing, historic communities and its diverse landscapes.')">St. Elizabeth</button>
+
+    <button class="parish" onclick="showModal('Manchester','Manchester is known for its cool climate, agricultural development, Mandeville and historic communities.')">Manchester</button>
+
+    <button class="parish" onclick="showModal('Clarendon','Clarendon has agricultural history, historic settlements and important connections to Jamaican development.')">Clarendon</button>
+
+    <button class="parish" onclick="showModal('St. Catherine','St. Catherine includes Spanish Town, a former capital and an important location in Jamaica’s colonial history.')">St. Catherine</button>
+
+  </div>
+
+</section>
+
+<!-- HERITAGE LIBRARY -->
+
+<section class="section" id="library">
+
+  <div class="section-heading">
+    <h2>Heritage Library</h2>
+    <p>Explore topics that help preserve Jamaican knowledge.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="card-content">
+        <h3>Freedom & Emancipation</h3>
+        <p>Learn about slavery, resistance, abolition and freedom.</p>
+        <button class="card-action" onclick="showModal('Freedom & Emancipation','Explore the history of slavery, resistance, abolition, apprenticeship and emancipation in Jamaica. This library section can expand with articles, historical documents and biographies.')">Read More →</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-content">
+        <h3>The Maroons</h3>
+        <p>Discover Maroon communities, resistance and traditions.</p>
+        <button class="card-action" onclick="showModal('The Maroons','Explore Maroon history, communities, treaties, resistance, leadership and cultural heritage.')">Read More →</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-content">
+        <h3>Jamaican Music</h3>
+        <p>Explore music that influenced the world.</p>
+        <button class="card-action" onclick="showModal('Jamaican Music','Learn about mento, ska, rocksteady, reggae, dub and dancehall and the artists who helped shape these genres.')">Read More →</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-content">
+        <h3>Independence</h3>
+        <p>Discover Jamaica's journey to nationhood.</p>
+        <button class="card-action" onclick="showModal('Independence','Jamaica became independent on August 6, 1962. Explore the political movements, leaders and events surrounding independence.')">Read More →</button>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- BOOKMARKS -->
+
+<section class="section" id="bookmarks">
+
+  <div class="section-heading">
+    <h2>Your Saved Heritage</h2>
+    <p>Save important topics to revisit later. Your bookmarks are stored locally on your device.</p>
+  </div>
+
+  <div id="bookmarkList" class="card">
+    <div class="card-content">
+      <p>No saved items yet. Press the Save button on topics you want to remember.</p>
     </div>
   </div>
 
-  <!-- App Interactivity Scripts -->
-  <script>
-    function openModal(title, text) {
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalBody').innerText = text;
-      document.getElementById('infoModal').style.display = 'flex';
+  <button class="btn btn-secondary" onclick="clearBookmarks()" style="margin-top:15px">
+    Clear Saved Items
+  </button>
+
+</section>
+
+<!-- SUPPORT -->
+
+<section class="section" id="support">
+
+  <div class="support">
+
+    <h2>Support Jamaica Heritage</h2>
+
+    <p>
+      Help MVSE Empire preserve, expand and share Jamaican history,
+      culture, education and heritage with future generations.
+    </p>
+
+    <p>
+      Your support helps maintain the platform and contribute to
+      the development of more educational resources.
+    </p>
+
+    <div id="paypal-button-container-P-22F09358XD239133LNMCYW4Q"></div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">MVSE EMPIRE</div>
+
+  <p>Jamaica Heritage Hub</p>
+
+  <p>Preserving Our History. Celebrating Our Culture. Protecting Our Legacy.</p>
+
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#timeline">History</a>
+    <a href="#heroes">Heroes</a>
+    <a href="#culture">Culture</a>
+    <a href="#support">Support</a>
+  </div>
+
+  <p>
+    &copy; <span id="year"></span> MVSE Empire.
+    Jamaica Heritage Hub.
+  </p>
+
+</footer>
+
+<!-- MOBILE NAV -->
+
+<nav class="mobile-nav">
+
+  <a href="#home" class="active">
+    <i class="fa-solid fa-house"></i>
+    <span>Home</span>
+  </a>
+
+  <a href="#timeline">
+    <i class="fa-solid fa-clock"></i>
+    <span>History</span>
+  </a>
+
+  <a href="#heroes">
+    <i class="fa-solid fa-star"></i>
+    <span>Heroes</span>
+  </a>
+
+  <a href="#culture">
+    <i class="fa-solid fa-music"></i>
+    <span>Culture</span>
+  </a>
+
+  <a href="#bookmarks">
+    <i class="fa-solid fa-bookmark"></i>
+    <span>Saved</span>
+  </a>
+
+</nav>
+
+<!-- MODAL -->
+
+<div class="modal" id="infoModal" onclick="closeModal(event)">
+
+  <div class="modal-content" onclick="event.stopPropagation()">
+
+    <button class="modal-close" onclick="hideModal()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <h2 id="modalTitle">Information</h2>
+
+    <p id="modalText"></p>
+
+    <button class="btn" onclick="hideModal()">Close</button>
+
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* YEAR */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* MODAL */
+
+function showModal(title, text) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalText").textContent = text;
+  document.getElementById("infoModal").classList.add("show");
+}
+
+function hideModal() {
+  document.getElementById("infoModal").classList.remove("show");
+}
+
+function closeModal(event) {
+  if (event.target.id === "infoModal") {
+    hideModal();
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    hideModal();
+  }
+});
+
+/* SEARCH */
+
+const searchableItems = [
+  {
+    title: "Taíno History",
+    keywords: "taino indigenous first people xaymaca",
+    section: "timeline",
+    description: "Explore the Indigenous peoples of Jamaica."
+  },
+  {
+    title: "Spanish Period",
+    keywords: "spanish columbus 1494 colonization",
+    section: "timeline",
+    description: "Learn about Spanish colonial Jamaica."
+  },
+  {
+    title: "British Colonial Rule",
+    keywords: "british england colonial slavery sugar",
+    section: "timeline",
+    description: "Explore British rule in Jamaica."
+  },
+  {
+    title: "Maroon Resistance",
+    keywords: "maroons freedom resistance communities",
+    section: "timeline",
+    description: "Learn about Maroon resistance."
+  },
+  {
+    title: "Emancipation",
+    keywords: "freedom slavery abolition 1838",
+    section: "timeline",
+    description: "Explore the history of emancipation."
+  },
+  {
+    title: "Morant Bay Rebellion",
+    keywords: "paul bogle rebellion 1865 justice",
+    section: "timeline",
+    description: "Learn about the Morant Bay Rebellion."
+  },
+  {
+    title: "Independence",
+    keywords: "independence 1962 flag nation",
+    section: "timeline",
+    description: "Discover Jamaica's independence."
+  },
+  {
+    title: "Nanny of the Maroons",
+    keywords: "nanny maroons hero freedom",
+    section: "heroes",
+    description: "Read about Nanny of the Maroons."
+  },
+  {
+    title: "Samuel Sharpe",
+    keywords: "samuel sharpe baptist rebellion",
+    section: "heroes",
+    description: "Read about Samuel Sharpe."
+  },
+  {
+    title: "Marcus Garvey",
+    keywords: "marcus garvey pan african black empowerment",
+    section: "heroes",
+    description: "Discover Marcus Garvey."
+  },
+  {
+    title: "Paul Bogle",
+    keywords: "paul bogle morant bay rebellion",
+    section: "heroes",
+    description: "Discover Paul Bogle."
+  },
+  {
+    title: "George William Gordon",
+    keywords: "george william gordon politician justice",
+    section: "heroes",
+    description: "Discover George William Gordon."
+  },
+  {
+    title: "Alexander Bustamante",
+    keywords: "alexander bustamante labour prime minister",
+    section: "heroes",
+    description: "Discover Alexander Bustamante."
+  },
+  {
+    title: "Norman Manley",
+    keywords: "norman manley self government politician",
+    section: "heroes",
+    description: "Discover Norman Manley."
+  },
+  {
+    title: "Jamaican Music",
+    keywords: "music reggae ska dancehall mento rocksteady",
+    section: "culture",
+    description: "Explore Jamaican music."
+  },
+  {
+    title: "Jamaican Food",
+    keywords: "food jerk ackee saltfish patties",
+    section: "culture",
+    description: "Explore Jamaican food."
+  },
+  {
+    title: "Jamaican Language",
+    keywords: "language patois patwa jamaican english",
+    section: "culture",
+    description: "Explore Jamaican language."
+  },
+  {
+    title: "Kingston",
+    keywords: "kingston capital city",
+    section: "parishes",
+    description: "Explore Kingston."
+  },
+  {
+    title: "St. Andrew",
+    keywords: "saint andrew st andrew",
+    section: "parishes",
+    description: "Explore St. Andrew."
+  },
+  {
+    title: "St. Thomas",
+    keywords: "saint thomas st thomas",
+    section: "parishes",
+    description: "Explore St. Thomas."
+  },
+  {
+    title: "Portland",
+    keywords: "portland parish",
+    section: "parishes",
+    description: "Explore Portland."
+  },
+  {
+    title: "St. Mary",
+    keywords: "saint mary st mary",
+    section: "parishes",
+    description: "Explore St. Mary."
+  },
+  {
+    title: "St. Ann",
+    keywords: "saint ann st ann garden parish",
+    section: "parishes",
+    description: "Explore St. Ann."
+  },
+  {
+    title: "Trelawny",
+    keywords: "trelawny parish",
+    section: "parishes",
+    description: "Explore Trelawny."
+  },
+  {
+    title: "St. James",
+    keywords: "saint james st james montego bay",
+    section: "parishes",
+    description: "Explore St. James."
+  },
+  {
+    title: "Hanover",
+    keywords: "hanover parish",
+    section: "parishes",
+    description: "Explore Hanover."
+  },
+  {
+    title: "Westmoreland",
+    keywords: "westmoreland savanna la mar",
+    section: "parishes",
+    description: "Explore Westmoreland."
+  },
+  {
+    title: "St. Elizabeth",
+    keywords: "saint elizabeth st elizabeth",
+    section: "parishes",
+    description: "Explore St. Elizabeth."
+  },
+  {
+    title: "Manchester",
+    keywords: "manchester mandeville",
+    section: "parishes",
+    description: "Explore Manchester."
+  },
+  {
+    title: "Clarendon",
+    keywords: "clarendon parish",
+    section: "parishes",
+    description: "Explore Clarendon."
+  },
+  {
+    title: "St. Catherine",
+    keywords: "saint catherine st catherine spanish town",
+    section: "parishes",
+    description: "Explore St. Catherine."
+  }
+];
+
+function toggleSearch() {
+  document.getElementById("searchInput").focus();
+  document.getElementById("searchArea").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function searchSite() {
+
+  const input = document.getElementById("searchInput");
+  const results = document.getElementById("searchResults");
+
+  const query = input.value.trim().toLowerCase();
+
+  if (!query) {
+    results.style.display = "none";
+    results.innerHTML = "";
+    return;
+  }
+
+  const matches = searchableItems.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.keywords.toLowerCase().includes(query)
+  );
+
+  results.style.display = "block";
+
+  if (matches.length === 0) {
+    results.innerHTML = "<p style='padding:12px;color:#bbb'>No results found. Try another search.</p>";
+    return;
+  }
+
+  results.innerHTML = matches.map(item => `
+    <button onclick="goToResult('${item.section}')">
+      <strong>${item.title}</strong><br>
+      <small>${item.description}</small>
+    </button>
+  `).join("");
+
+}
+
+function goToResult(section) {
+  document.getElementById(section).scrollIntoView({
+    behavior: "smooth"
+  });
+
+  document.getElementById("searchResults").style.display = "none";
+}
+
+/* BOOKMARKS */
+
+function getBookmarks() {
+  try {
+    return JSON.parse(localStorage.getItem("mvseBookmarks") || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function bookmark(title) {
+
+  let bookmarks = getBookmarks();
+
+  if (bookmarks.includes(title)) {
+    bookmarks = bookmarks.filter(item => item !== title);
+  } else {
+    bookmarks.push(title);
+  }
+
+  localStorage.setItem("mvseBookmarks", JSON.stringify(bookmarks));
+
+  updateBookmarks();
+
+  showModal(
+    "Bookmarks Updated",
+    title + " has been updated in your saved heritage list."
+  );
+}
+
+function updateBookmarks() {
+
+  const bookmarks = getBookmarks();
+  const list = document.getElementById("bookmarkList");
+
+  if (bookmarks.length === 0) {
+    list.innerHTML = `
+      <div class="card-content">
+        <p>No saved items yet. Press the Save button on topics you want to remember.</p>
+      </div>
+    `;
+    return;
+  }
+
+  list.innerHTML = `
+    <div class="card-content">
+      <h3 style="color:var(--gold);margin-bottom:10px">Your Saved Topics</h3>
+      ${bookmarks.map(item => `
+        <div style="padding:10px;border-bottom:1px solid var(--border)">
+          <i class="fa-solid fa-bookmark" style="color:var(--gold)"></i>
+          ${item}
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function clearBookmarks() {
+  if (confirm("Clear all saved heritage topics?")) {
+    localStorage.removeItem("mvseBookmarks");
+    updateBookmarks();
+  }
+}
+
+updateBookmarks();
+
+/* MOBILE NAV ACTIVE STATE */
+
+const navLinks = document.querySelectorAll(".mobile-nav a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", function() {
+    navLinks.forEach(item => item.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+</script>
+
+<!-- PAYPAL SUBSCRIPTION -->
+
+<script src="https://www.paypal.com/sdk/js?client-id=BAAeRAGEML3wfhcYtFaw0eaWU6tPXkqUXZrbrVbjQnYAEDrzUmLFTqcDALpDDl55aj-ffgXPqEwYLwh9nc&vault=true&intent=subscription"></script>
+
+<script>
+
+if (typeof paypal !== "undefined") {
+
+  paypal.Buttons({
+
+    style: {
+      shape: "rect",
+      color: "gold",
+      layout: "vertical",
+      label: "subscribe"
+    },
+
+    createSubscription: function(data, actions) {
+      return actions.subscription.create({
+        plan_id: "P-22F09358XD239133LNMCYW4Q"
+      });
+    },
+
+    onApprove: function(data) {
+      showModal(
+        "Thank You for Supporting Jamaica Heritage!",
+        "Your subscription has been approved. Your support helps MVSE Empire continue developing Jamaica's heritage platform.\n\nSubscription reference: " + data.subscriptionID
+      );
+    },
+
+    onError: function(error) {
+      console.error("PayPal Error:", error);
+      showModal(
+        "PayPal Error",
+        "The PayPal payment system could not complete the process. Please try again later."
+      );
     }
 
-    function closeModal(event) {
-      if (event.target.id === 'infoModal') {
-        document.getElementById('infoModal').style.display = 'none';
-      }
-    }
-  </script>
+  }).render("#paypal-button-container-P-22F09358XD239133LNMCYW4Q");
 
-  <!-- PayPal Subscription SDK & Button Configuration -->
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAeRAGEML3wfhcYtFaw0eaWU6tPXkqUXZrbrVbjQnYAEDrzUmLFTqcDALpDDl55aj-ffgXPqEwYLwh9nc&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-  <script>
-    paypal.Buttons({
-      style: {
-        shape: 'rect',
-        color: 'gold',
-        layout: 'vertical',
-        label: 'subscribe'
-      },
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          plan_id: 'P-22F09358XD239133LNMCYW4Q'
-        });
-      },
-      onApprove: function(data, actions) {
-        openModal('Thank You for Supporting!', 'Your monthly subscription to MVSE Empire Heritage Hub is active. Subscription ID: ' + data.subscriptionID);
-      }
-    }).render('#paypal-button-container-P-22F09358XD239133LNMCYW4Q');
-  </script>
+}
+
+</script>
 
 </body>
 </html>
-
