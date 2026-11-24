@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jamaica Heritage - MVSE Empire Heritage Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --bg-dark: #141512;
+      --bg-card: #1d1f1a;
+      --cream: #f7f4eb;
+      --gold: #d4b468;
+      --gold-light: #e5c985;
+      --green-btn: #255926;
+      --green-border: #3a6b35;
+      --text-muted: #c2bfb6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d0e0c;
+      color: var(--cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* App Container (Mobile-First, scales nicely on desktop) */
+    .app-container {
+      width: 100%;
+      max-width: 460px;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at top right, rgba(212, 180, 104, 0.08), transparent 50%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+      padding-bottom: 80px;
+    }
+
+    /* Top Header */
+    header {
+      background-color: var(--cream);
+      color: #1c1c1a;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid var(--green-btn);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: #1c1c1a;
+      cursor: pointer;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .brand-text h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      line-height: 1;
+      color: #1a1a18;
+    }
+
+    .brand-text span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      color: #8c6d23;
+      font-weight: 700;
+    }
+
+    .crest-badge {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #d4b468, #9c7a2c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Main Content */
+    main {
+      padding: 18px 16px;
+      flex: 1;
+    }
+
+    /* Hero Banner */
+    .hero-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid var(--gold);
+      height: 175px;
+      background: linear-gradient(to right, rgba(20, 18, 13, 0.88) 35%, rgba(20, 18, 13, 0.35)),
+                  url('https://images.unsplash.com/photo-1589519160732-57fc498494f8?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-card h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      margin-bottom: 14px;
+    }
+
+    .btn-primary {
+      align-self: flex-start;
+      background-color: var(--green-btn);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 9px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #2f6e30;
+    }
+
+    /* Carousel Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin: 12px 0 18px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #55544d;
+    }
+
+    .dot.active {
+      background-color: var(--gold);
+    }
+
+    /* Era Cards Grid */
+    .era-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .era-card {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--green-border);
+      outline: 1px solid rgba(212, 180, 104, 0.45);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .era-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+
+    .era-img {
+      width: 100%;
+      height: 125px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(212, 180, 104, 0.3);
+    }
+
+    .era-info {
+      padding: 12px;
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .era-info h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.98rem;
+      color: var(--gold-light);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .era-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .era-meta i {
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    /* Contribution / PayPal Section */
+    .support-section {
+      margin-top: 22px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .support-section h4 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-light);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .support-section p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* Bottom Navigation */
+    nav.bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 460px;
+      background-color: var(--cream);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0 12px;
+      border-top: 2px solid var(--gold);
+      z-index: 100;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #63615a;
+      font-size: 0.75rem;
+      font-weight: 600;
+      gap: 4px;
+    }
+
+    .nav-item i {
+      font-size: 1.15rem;
+    }
+
+    .nav-item.active {
+      color: var(--green-btn);
+    }
+
+    /* Simple Modal for Era Details */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1.5px solid var(--gold);
+      border-radius: 16px;
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      color: var(--cream);
+    }
+
+    .modal-content h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .modal-content p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Top Header -->
+    <header>
+      <button class="icon-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="brand">
+        <div class="brand-text">
+          <h1>JAMAICA</h1>
+          <span>HERITAGE</span>
+        </div>
+        <div class="crest-badge" title="Coat of Arms">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+      </div>
+      <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Card -->
+      <section class="hero-card">
+        <h2>Discover Our Journey</h2>
+        <button class="btn-primary" onclick="openModal('Jamaica Historical Timeline', 'Explore the rich history of Jamaica from the indigenous Taíno people through colonial eras to modern independence.')">
+          Explore Timeline
+        </button>
+      </section>
+
+      <!-- Pagination Dots -->
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <!-- 2x2 Historical Era Grid -->
+      <section class="era-grid">
+        <!-- Card 1: Taino History -->
+        <article class="era-card" onclick="openModal('Taíno History — The First People', 'The indigenous Taíno inhabitants named the island Xaymaca, meaning Land of Wood and Water. They were skilled farmers, potters, and seafarers who lived peacefully across the island before 1494.')">
+          <img class="era-img" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=500&q=80" alt="Taíno Pottery and Artifacts">
+          <div class="era-info">
+            <h3>TAINO<br>HISTORY</h3>
+            <div class="era-meta">
+              <span>The First People</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Spanish Era -->
+        <article class="era-card" onclick="openModal('Spanish Era (1494 - 1655)', 'Following Christopher Columbus’s arrival in 1494, Spain established settlements including Sevilla la Nueva and Villa de la Vega (Spanish Town), introducing new crops and livestock while drastically impacting the native population.')">
+          <img class="era-img" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80" alt="Spanish Era Ship and Architecture">
+          <div class="era-info">
+            <h3>SPANISH<br>ERA</h3>
+            <div class="era-meta">
+              <span>1494 - 1655</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: British Rule -->
+        <article class="era-card" onclick="openModal('British Rule (1655 - 1962)', 'Captured by England in 1655, Jamaica became a major sugar-producing colony. This era saw the rise of Maroon resistance, the abolition of slavery in 1838, and the Morant Bay Rebellion led by Paul Bogle.')">
+          <img class="era-img" src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=500&q=80" alt="Colonial Architecture">
+          <div class="era-info">
+            <h3>BRITISH<br>RULE</h3>
+            <div class="era-meta">
+              <span>1655 - 1962</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Independence -->
+        <article class="era-card" onclick="openModal('Independence (1962 - Present)', 'On August 6, 1962, Jamaica gained full independence from the United Kingdom, raising the black, green, and gold flag and emerging as a global cultural powerhouse in music, sports, and heritage.')">
+          <img class="era-img" src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=500&q=80" alt="Jamaican Independence Celebration">
+          <div class="era-info">
+            <h3>INDEPENDENCE</h3>
+            <div class="era-meta">
+              <span>1962 - Present</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Monthly Site Maintenance Subscription Box -->
+      <section class="support-section">
+        <h4>Support MVSE Empire Heritage Hub</h4>
+        <p>Contribute $2.99 USD monthly to help maintain and expand our Jamaican heritage archive.</p>
+        
+        <!-- Integrated PayPal Subscribe Button -->
+        <div id="paypal-button-container-P-22F09358XD239133LNMCYW4Q"></div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <a href="#home" class="nav-item active">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="#timeline" class="nav-item" onclick="openModal('Timeline', 'Full chronological timeline view coming soon.')">
+        <i class="fa-solid fa-list-ul"></i>
+        <span>Timeline</span>
+      </a>
+      <a href="#map" class="nav-item" onclick="openModal('Heritage Map', 'Interactive map of historic sites across Jamaica coming soon.')">
+        <i class="fa-solid fa-map"></i>
+        <span>Map</span>
+      </a>
+      <a href="#bookmark" class="nav-item" onclick="openModal('Bookmarks', 'Your saved historical articles and landmarks.')">
+        <i class="fa-solid fa-bookmark"></i>
+        <span>Bookmark</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Info Modal -->
+  <div id="infoModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <h3 id="modalTitle">Title</h3>
+      <p id="modalBody">Description</p>
+      <button class="btn-primary" onclick="document.getElementById('infoModal').style.display='none'">Close</button>
+    </div>
+  </div>
+
+  <!-- App Interactivity Scripts -->
+  <script>
+    function openModal(title, text) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalBody').innerText = text;
+      document.getElementById('infoModal').style.display = 'flex';
+    }
+
+    function closeModal(event) {
+      if (event.target.id === 'infoModal') {
+        document.getElementById('infoModal').style.display = 'none';
+      }
+    }
+  </script>
+
+  <!-- PayPal Subscription SDK & Button Configuration -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAeRAGEML3wfhcYtFaw0eaWU6tPXkqUXZrbrVbjQnYAEDrzUmLFTqcDALpDDl55aj-ffgXPqEwYLwh9nc&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+  <script>
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'gold',
+        layout: 'vertical',
+        label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          plan_id: 'P-22F09358XD239133LNMCYW4Q'
+        });
+      },
+      onApprove: function(data, actions) {
+        openModal('Thank You for Supporting!', 'Your monthly subscription to MVSE Empire Heritage Hub is active. Subscription ID: ' + data.subscriptionID);
+      }
+    }).render('#paypal-button-container-P-22F09358XD239133LNMCYW4Q');
+  </script>
+
+</body>
+</html>
+
